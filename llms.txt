@@ -1,0 +1,21 @@
+# Anduril IPO Tracker
+
+> A single-page pre-IPO tracker for Anduril Industries, the autonomous-defense company founded in 2017 by Palmer Luckey, Trae Stephens, Brian Schimpf and others. It surfaces the latest private valuation, funding history, an estimated (unconfirmed) IPO window, ticker/exchange status, secondary-market access routes, an SEC S-1 watch, and on-device reminder mechanisms (.ics check-in reminder, browser notifications). Built and maintained by an individual retail investor — not affiliated with Anduril.
+
+## What's tracked
+
+- **IPO status:** No S-1 or confidential DRS filed as of June 2026. Anduril remains a private company. There is no offer price, ticker, or exchange.
+- **Estimated window:** 2026–2027. Palmer Luckey has said Anduril will go public "in the next few years," after proving profitability and manufacturing scale. Forge Global puts ~60% odds on a 2026 listing; the May 2026 mega-round may push it to 2027.
+- **Latest valuation:** ~$61B (Series H, $5B raised May 2026, led by Thrive Capital + Andreessen Horowitz), up from $30.5B (Series G, June 2025).
+- **Financials:** ~$2.2B 2025 revenue; ~$4.3B guided for 2026. ~$11B+ raised across Seed through Series H.
+- **Ticker:** None assigned — unknown until a public prospectus is filed.
+
+## Constraints
+
+- Static GitHub Pages site, no backend. No SMS or email is ever sent. Reminder delivery is via a downloaded .ics check-in file (native phone/desktop alarms) and browser notifications (while a tab or installed PWA is open).
+- Not investment advice; not affiliated with Anduril. All figures sourced from public reporting (CNBC, TechCrunch, Reuters, Forge, Hiive, Motley Fool) and management commentary, and are subject to change.
+
+## Source
+
+- Repository: https://github.com/itsavibecode/anduril
+- Live: https://anduril.bookhockeys.com/

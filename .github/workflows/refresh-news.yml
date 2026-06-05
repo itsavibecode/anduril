@@ -1,0 +1,50 @@
+name: Refresh news + S-1 watch
+
+# Runs once a day and on demand from the Actions tab.
+# 14:00 UTC ≈ 9am US Eastern (during DST) / 10am EST — a quiet window
+# for Google News + EDGAR. The script is fast (~5s) and idempotent:
+# no commit happens unless content actually changed.
+on:
+  schedule:
+    - cron: "0 14 * * *"
+  workflow_dispatch:
+
+# Per-workflow override — modern GitHub default is read-only GITHUB_TOKEN.
+permissions:
+  contents: write
+
+# Don't pile up runs if the previous one is still going.
+concurrency:
+  group: refresh-news
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Run refresh script
+        run: python .scripts/refresh-news.py
+
+      - name: Commit and push if changed
+        run: |
+          set -e
+          if [[ -z "$(git status --porcelain)" ]]; then
+            echo "::notice::No changes — nothing to commit."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add index.html sitemap.xml
+          DATE_UTC=$(date -u +%Y-%m-%d)
+          git commit -m "auto: daily data refresh ${DATE_UTC}" \
+            -m "Refreshed by .github/workflows/refresh-news.yml" \
+            -m "$(git diff --cached --stat)"
+          git push
+          echo "::notice::Committed and pushed daily refresh for ${DATE_UTC}"

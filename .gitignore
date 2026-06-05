@@ -1,0 +1,4 @@
+# Local Lighthouse / PageSpeed reports — regenerated on demand, not source of truth
+.lh-*.json
+.lh-*.html
+.psi-*.json
