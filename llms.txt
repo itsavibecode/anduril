@@ -17,5 +17,4 @@
 
 ## Source
 
-- Repository: https://github.com/itsavibecode/anduril
 - Live: https://anduril.bookhockeys.com/

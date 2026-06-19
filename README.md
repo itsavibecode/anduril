@@ -4,7 +4,7 @@ A single-page, no-backend tracker for the **Anduril Industries** IPO — built f
 retail investors who don't want to miss the filing. Live at
 **[anduril.bookhockeys.com](https://anduril.bookhockeys.com/)**.
 
-It's a sibling of the [SpaceX IPO Tracker](https://github.com/itsavibecode/spacex)
+It's a sibling of the SpaceX IPO Tracker
 and shares its architecture, but it's tuned for a company at a much earlier
 stage: **Anduril has not filed an S-1.** So rather than faking a confirmed date,
 this tracker is honest about what's known and what isn't.
@@ -72,10 +72,9 @@ python .scripts/refresh-news.py
 
 ## Deployment
 
-GitHub Pages from the repo root. The custom domain is set via `CNAME`
-(`anduril.bookhockeys.com`); add a `CNAME` record in Cloudflare pointing
-`anduril` → `itsavibecode.github.io` (DNS-only / grey cloud), then enable Pages
-in repo settings.
+GitHub Pages from the repo root. The custom domain is set via the `CNAME`
+file (`anduril.bookhockeys.com`); point the subdomain at GitHub's Pages
+endpoint in DNS, then enable Pages in repo settings.
 
 ## Disclaimer
 

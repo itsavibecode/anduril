@@ -37,8 +37,8 @@ INDEX = REPO / "index.html"
 SITEMAP = REPO / "sitemap.xml"
 
 # SEC requires a real UA; Google News doesn't care but we're polite either way.
-UA = ("anduril-tracker-itsavibecode contact@bookhockeys.com "
-      "(+https://github.com/itsavibecode/anduril)")
+UA = ("anduril-ipo-tracker contact@bookhockeys.com "
+      "(anduril.bookhockeys.com)")
 
 
 def fetch(url, accept="*/*", retries=2):
