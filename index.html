@@ -956,7 +956,7 @@
   // AUTO:ARTICLES:START — managed by .github/workflows/refresh-news.yml; edits here will be overwritten on the next cron run
 
   const ARTICLE_POOL = [
-    { title: "Anduril IPO: Everything You Need to Know About Anduril", source: "Investing.com India", date: "2026-06-24", url: "https://news.google.com/rss/articles/CBMirgFBVV95cUxOdVRzVktNVkZUX3llX3dpREs3QmxzNk9XWEE5VHR0TmRqTFRjU0o3YkQ0WkJJbDdKUzhSMHRIT3NKNHI2ZkVDZHM2VV94U041bldNRm96dlN4cDRjcTY5cmNHeTlZVjhWX09KQnNVTldsRTlScmtWcm1sWFlQZUFFRDhYTHUwOFc1Rm9WYVRueXZ1X2Y0aC1URUItYV9pZW4wZ3F1WE1SOTZZdWVFMVE?oc=5" },
+    { title: "SEC Settles Charges With New York Man Convicted in $10.5 Million Fraud", source: "Barron's", date: "2026-06-26", url: "https://news.google.com/rss/articles/CBMilgFBVV95cUxONVU4SU5oc19DUS0ya3l0cGh4ZlV3cnVLN2V1dGxmYUNsRDdoZ2N0aFpDVnFjM25WcUVoZzR6N3VpR3BSZ0xTVmJBWVZreEgxeFU3NjMyVk4tZnZjOEdqVDM0T3ZaRmExcGNuTG5pRkxhUE1CUmFHNmFMcXNWU0FobGgyMGhtS1RabE9uMmZZaUdFQTRscmc?oc=5" },
     { title: "Anduril IPO: Everything You Need to Know About Anduril", source: "FOREX.com", date: "2026-06-23", url: "https://news.google.com/rss/articles/CBMingFBVV95cUxNWmdCcE80MTEtNG5IWW9aR3QxbVlSZDNESjdNVXlzbm0tVXEzaUdHRGY0Y3hzLXNRMXhPSDYzUzdfeW0wdzU2R3lPTW9Ic1B6djdsSTd3TG5TSFVSNGtqdm1ZZnd4TGNFN2FfNTY5RGpzYkZBanlEUE12eVRmT1BMSWtaaWtoS3gxakRDRHkwSVdEQm5xejR6LWNRMkd1dw?oc=5" },
     { title: "Anduril in talks with Israeli officials to establish local defense-tech hub", source: "The Jerusalem Post", date: "2026-06-22", url: "https://news.google.com/rss/articles/CBMiY0FVX3lxTE1mRWZ5aDQycTVCNG5wSnc1TGdRU01SVVBuTlhoZ2xtbzZzVmhJekpUYXpYMDRHa0ZUMUxXYVdHdl9nNWlXaEFxV19sTV9JNDRlTS1QWXB6bnZqT1FHc005UVp0Zw?oc=5" },
     { title: "Anduril (Pre-IPO) Stock Price: ANDURIL Stock Chart, Market Cap & News Today", source: "CoinGecko", date: "2026-06-10", url: "https://news.google.com/rss/articles/CBMiYEFVX3lxTE15RjFWeGZxQUZPX0xKdXFDbkRSUEdZNExQUFVLRWIxc1VBTUk5Mk5CUHk0dGQ3Zk5OMDFZMG9wQTRfQkRiajEzSnZCM1J5Z0RpMy1pbkx1VDFpbWh6VHpUVA?oc=5" },
@@ -1013,14 +1013,14 @@
 
   // AUTO:FILINGS:START — partially auto-managed: refresh-news.py updates "Updated" dates on live links and appends SEC-detected filings. Hand-curated entries are preserved.
   const FILINGS = [
-    { type: "SEC EDGAR", title: "Full-text search · Anduril S-1", meta: "Direct filter for an Anduril registration statement — empty until they file", url: "https://efts.sec.gov/LATEST/search-index?q=%22Anduril+Industries%22&forms=S-1", date: "2026-06-26", dateKind: "Updated" },
-    { type: "SEC EDGAR", title: "Full-text search · all Anduril mentions", meta: "Every EDGAR document referencing Anduril (mostly third-party Form D / SPV filings today)", url: "https://efts.sec.gov/LATEST/search-index?q=%22Anduril%22", date: "2026-06-26", dateKind: "Updated" },
-    { type: "SECONDARY", title: "Forge Global · Anduril", meta: "Pre-IPO order book + indicative Forge Price", url: "https://forgeglobal.com/anduril_ipo/", date: "2026-06-26", dateKind: "Updated" },
-    { type: "SECONDARY", title: "Hiive · private shares", meta: "Live bids/asks on Anduril secondary shares", url: "https://www.hiive.com/", date: "2026-06-26", dateKind: "Updated" },
+    { type: "SEC EDGAR", title: "Full-text search · Anduril S-1", meta: "Direct filter for an Anduril registration statement — empty until they file", url: "https://efts.sec.gov/LATEST/search-index?q=%22Anduril+Industries%22&forms=S-1", date: "2026-06-27", dateKind: "Updated" },
+    { type: "SEC EDGAR", title: "Full-text search · all Anduril mentions", meta: "Every EDGAR document referencing Anduril (mostly third-party Form D / SPV filings today)", url: "https://efts.sec.gov/LATEST/search-index?q=%22Anduril%22", date: "2026-06-27", dateKind: "Updated" },
+    { type: "SECONDARY", title: "Forge Global · Anduril", meta: "Pre-IPO order book + indicative Forge Price", url: "https://forgeglobal.com/anduril_ipo/", date: "2026-06-27", dateKind: "Updated" },
+    { type: "SECONDARY", title: "Hiive · private shares", meta: "Live bids/asks on Anduril secondary shares", url: "https://www.hiive.com/", date: "2026-06-27", dateKind: "Updated" },
     { type: "FORM D", title: "Anduril Investors LLC", meta: "Third-party SPV holding Anduril shares · CIK 1990112", url: "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001990112&type=&dateb=&owner=include&count=40", date: "2023-09-15", dateKind: "Filed" },
     { type: "FORM D", title: "MW LSV Anduril Industries-II, LLC", meta: "Third-party co-invest vehicle · CIK 1893879", url: "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001893879&type=&dateb=&owner=include&count=40", date: "2021-11-16", dateKind: "Filed" },
-    { type: "COMPANY", title: "Anduril newsroom", meta: "Official press releases — first place a filing announcement appears", url: "https://www.anduril.com/press/", date: "2026-06-26", dateKind: "Updated" },
-    { type: "MARKET DATA", title: "CNBC · Anduril coverage", meta: "Ongoing reporting on funding, contracts, and IPO chatter", url: "https://www.cnbc.com/anduril/", date: "2026-06-26", dateKind: "Updated" }
+    { type: "COMPANY", title: "Anduril newsroom", meta: "Official press releases — first place a filing announcement appears", url: "https://www.anduril.com/press/", date: "2026-06-27", dateKind: "Updated" },
+    { type: "MARKET DATA", title: "CNBC · Anduril coverage", meta: "Ongoing reporting on funding, contracts, and IPO chatter", url: "https://www.cnbc.com/anduril/", date: "2026-06-27", dateKind: "Updated" }
   ];
   // AUTO:FILINGS:END
 
