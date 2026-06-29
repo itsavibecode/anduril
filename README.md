@@ -85,6 +85,10 @@ exchange until a public S-1 is filed.
 
 ## Changelog
 
+### v0.1.1 — 2026-06-29 (refresh script: multi-query news)
+- **Bot's news refresh now runs 7 queries** instead of the single hardcoded `"Anduril" IPO`. New queries: `"Anduril Industries" IPO`, `"Anduril" IPO`, `"Anduril" funding`, `"Anduril" valuation`, `"Anduril" contract`, `"Anduril" SEC`, `"Anduril" S-1`. Results merged + URL-deduped + freshest 25 kept after the 90-day cutoff. Smoke test today: 373 unique items across 7 queries vs. ~50 from the single old query. Catches material non-IPO news (defense contracts, funding rounds, valuation marks) that the narrow query was filtering out.
+- **No content changes** — script-only release. The next daily cron tick will exercise the new behavior. The S-1 EDGAR probe is unchanged (still informational-only since Anduril hasn't filed).
+
 ### v0.1.0 — 2026-06-05
 Initial release. Forked the SpaceX IPO Tracker's architecture and re-pointed it
 at Anduril. The key design decision: because Anduril is far earlier in the IPO

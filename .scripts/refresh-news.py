@@ -58,7 +58,20 @@ def fetch(url, accept="*/*", retries=2):
 
 
 # === Google News RSS =========================================================
-GNEWS_URL = "https://news.google.com/rss/search?q=%22Anduril%22+IPO&hl=en-US&gl=US&ceid=US:en"
+# Multiple queries instead of a single "Anduril IPO" search — a single
+# narrow query misses material non-IPO news (funding rounds, contracts,
+# leadership changes). Each variant fetches up to 100 items, we dedupe
+# by URL across the whole set and keep the freshest 25.
+GNEWS_QUERIES = [
+    "%22Anduril+Industries%22+IPO",
+    "%22Anduril%22+IPO",
+    "%22Anduril%22+funding",
+    "%22Anduril%22+valuation",
+    "%22Anduril%22+contract",
+    "%22Anduril%22+SEC",
+    "%22Anduril%22+S-1",
+]
+GNEWS_BASE = "https://news.google.com/rss/search?q={q}&hl=en-US&gl=US&ceid=US:en"
 
 # Friendly source names so the UI doesn't show "Bloomberg.com" next to "Bloomberg".
 SOURCE_NORMALIZE = {
@@ -90,15 +103,14 @@ def parse_pubdate(s):
         return None
 
 
-def google_news_articles():
-    body = fetch(GNEWS_URL, accept="application/rss+xml")
+def _parse_gnews_feed(body):
+    """Parse one Google News RSS payload into a list of article dicts."""
     root = ET.fromstring(body)
     out = []
     for item in root.iter("item"):
         title_raw = (item.findtext("title") or "").strip()
         link = (item.findtext("link") or "").strip()
         pub = (item.findtext("pubDate") or "").strip()
-        # Google News titles end with " - Source"
         m = re.match(r"^(.+?)\s+-\s+([^-]+)$", title_raw)
         if m:
             title, source = m.group(1).strip(), m.group(2).strip()
@@ -116,6 +128,29 @@ def google_news_articles():
             "url": link,
         })
     return out
+
+
+def google_news_articles():
+    """Fetch each query, merge, dedupe by URL. Per-query failures don't
+    sink the whole fetch — log and keep going."""
+    seen_urls = set()
+    merged = []
+    for q in GNEWS_QUERIES:
+        url = GNEWS_BASE.format(q=q)
+        try:
+            body = fetch(url, accept="application/rss+xml")
+            items = _parse_gnews_feed(body)
+        except Exception as e:
+            print(f"  WARNING: Google News query '{q}' failed: {e}", file=sys.stderr)
+            continue
+        before = len(merged)
+        for a in items:
+            if a["url"] in seen_urls:
+                continue
+            seen_urls.add(a["url"])
+            merged.append(a)
+        print(f"  Google News '{q}': {len(items)} items, {len(merged) - before} new after URL dedupe")
+    return merged
 
 
 def filter_articles(articles, days=90, cap=25):
@@ -231,8 +266,9 @@ def main():
     try:
         articles_raw = google_news_articles()
         articles = filter_articles(articles_raw)
-        print(f"  Google News: {len(articles_raw)} items -> {len(articles)} kept "
-              f"after dedupe + 90-day cutoff")
+        print(f"  Google News TOTAL: {len(articles_raw)} unique items across "
+              f"{len(GNEWS_QUERIES)} queries -> {len(articles)} kept after "
+              f"dedupe + 90-day cutoff")
         if articles:
             text = replace_articles(text, articles)
         else:
