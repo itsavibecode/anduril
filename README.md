@@ -85,6 +85,12 @@ exchange until a public S-1 is filed.
 
 ## Changelog
 
+### v0.2.0 — 2026-10-20 (four-month catch-up: $90B tender, Fury production, 2027+ window)
+- **Hero window moved from "2026–27" to "2027+".** With no S-1 on EDGAR by late October, a 2026 listing is no longer possible, and CEO Brian Schimpf told CNBC in July the company is "not in a rush" and that a hype cycle is a bad time to debut. The page's whole point is honest framing, so the headline now says what the evidence says.
+- **Valuation mark is now $90B**, from the October 13 employee tender offer ($94.80/share, ~$1.3B cap, closes Nov 9). Price block, stat board, caption, meta tags and OG image all explain that this is a secondary buyback, not a priced round; the $61B Series H remains the last primary round, and the July Reuters report of ~$100B round talks is noted as unconfirmed.
+- **Four timeline events added** that the news bot caught but the hand-curated timeline did not: June 17 Air Force production award for the FQ-44A Fury, July 9 "not in a rush" interview, July 28 first Fury off the Arsenal-1 line (named "Fury" Sept 14), and the Oct 13 tender. The final future event is retitled "Public listing — 2027 or later".
+- llms.txt and the footer disclaimer brought to the same dates. OG image regenerated.
+
 ### v0.1.1 — 2026-06-29 (refresh script: multi-query news)
 - **Bot's news refresh now runs 7 queries** instead of the single hardcoded `"Anduril" IPO`. New queries: `"Anduril Industries" IPO`, `"Anduril" IPO`, `"Anduril" funding`, `"Anduril" valuation`, `"Anduril" contract`, `"Anduril" SEC`, `"Anduril" S-1`. Results merged + URL-deduped + freshest 25 kept after the 90-day cutoff. Smoke test today: 373 unique items across 7 queries vs. ~50 from the single old query. Catches material non-IPO news (defense contracts, funding rounds, valuation marks) that the narrow query was filtering out.
 - **No content changes** — script-only release. The next daily cron tick will exercise the new behavior. The S-1 EDGAR probe is unchanged (still informational-only since Anduril hasn't filed).

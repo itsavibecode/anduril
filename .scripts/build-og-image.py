@@ -70,7 +70,7 @@ d.text((sp_x2 - sw - 4, sp_y + 6), status_text, font=status_font, fill=ACCENT2)
 
 # --- Big hero window --------------------------------------------------------
 date_font = f("ariblk.ttf", 140)  # Arial Black — heaviest sans on Windows
-date_text = "2026–27"
+date_text = "2027+"
 dw, _ = text_size(d, date_text, date_font)
 ascent, descent = date_font.getmetrics()
 date_visual_height = ascent + descent
@@ -78,7 +78,7 @@ date_y = 178
 d.text(((W - dw) / 2, date_y), date_text, font=date_font, fill=INK)
 
 sub_font = f("Inter-Medium.ttf", 24)
-sub_text = "Estimated listing window  ·  valuation $61B  ·  not yet filed"
+sub_text = "Earliest realistic window  ·  $90B tender mark  ·  not yet filed"
 sw2, _ = text_size(d, sub_text, sub_font)
 d.text(((W - sw2) / 2, date_y + date_visual_height + 8),
        sub_text, font=sub_font, fill=INK_DIM)
@@ -112,14 +112,14 @@ pr_w = 520
 pr_x = W - PAD - 36 - pr_w
 d.rounded_rectangle([pr_x, row_y, pr_x + pr_w, row_y + tk_h],
                     radius=14, fill=PANEL, outline=LINE, width=1)
-d.text((pr_x + 26, row_y + 18), "LATEST PRIVATE VALUATION",
+d.text((pr_x + 26, row_y + 18), "LATEST VALUATION MARK",
        font=lbl_font, fill=INK_DIM)
 price_font = f("ariblk.ttf", 56)
-d.text((pr_x + 26, row_y + 38), "$61B",
+d.text((pr_x + 26, row_y + 38), "$90B",
        font=price_font, fill=ACCENT2)
 # small "Series H" tag on the right of the valuation card
 sh_font = f("Inter-Medium.ttf", 16)
-sht = "Series H · May 2026"
+sht = "Tender · Oct 2026"
 shw, shh = text_size(d, sht, sh_font)
 d.text((pr_x + pr_w - 26 - shw, row_y + tk_h - 18 - shh), sht,
        font=sh_font, fill=INK_FAINT)

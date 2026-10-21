@@ -4,9 +4,9 @@
 
 ## What's tracked
 
-- **IPO status:** No S-1 or confidential DRS filed as of June 2026. Anduril remains a private company. There is no offer price, ticker, or exchange.
-- **Estimated window:** 2026–2027. Palmer Luckey has said Anduril will go public "in the next few years," after proving profitability and manufacturing scale. Forge Global puts ~60% odds on a 2026 listing; the May 2026 mega-round may push it to 2027.
-- **Latest valuation:** ~$61B (Series H, $5B raised May 2026, led by Thrive Capital + Andreessen Horowitz), up from $30.5B (Series G, June 2025).
+- **IPO status:** No S-1 or confidential DRS filed as of October 2026. Anduril remains a private company. There is no offer price, ticker, or exchange. CEO Brian Schimpf said in July 2026 the company is "not in a rush" to go public.
+- **Estimated window:** 2027 or later. A 2026 listing is ruled out by the absence of any S-1 as of late October 2026. Palmer Luckey has said Anduril will "definitely" go public after proving profitability and manufacturing scale (Arsenal-1).
+- **Latest valuation mark:** ~$90B, implied by an employee tender offer at $94.80/share (opened Oct 13, 2026, closes Nov 9; ~$1.3B cap). Last priced round: ~$61B (Series H, $5B raised May 2026, led by Thrive Capital + Andreessen Horowitz), up from $30.5B (Series G, June 2025). Reuters reported July 2026 talks of a round near $100B; not closed.
 - **Financials:** ~$2.2B 2025 revenue; ~$4.3B guided for 2026. ~$11B+ raised across Seed through Series H.
 - **Ticker:** None assigned — unknown until a public prospectus is filed.
 
